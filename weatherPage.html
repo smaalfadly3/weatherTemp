@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="assets/bootstrap-5.3.2-dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .back{
+            background-image: linear-gradient(to right, #77A1D3 0%, #79CBCA  51%, #77A1D3  100%);
+            background-size: 200% auto;
+        }
+        .clear{
+            background-color: rgba(0,0,0,0.1);
+
+            
+            
+        }
+    </style>
+
+</head>
+<body class="back ">
+    <div class="container">
+        <p class="h1 text-center text-uppercase text-light">Weather Template</p>
+
+        <div class="row row-cols-1 row-cols-md-2 g-4 align-items-center justify-content-center ">
+            <div class="col">
+                <div class="card text-bg mb-3 border-0 clear text-light " id="displayer" >
+                    <div class="card-body  ">
+                      <h5 class="card-title text-uppercase text-center">local weather report</h5>
+                      <div class="flex-row d-flex justify-content-center align-items-center">
+                        <img src="assets/images/sun.png" class=" p-1" id="mg"  alt="...">
+                        <div class="flex-column">
+                            <p class="card-text fw-bold fs-6  " id="d-w">SUNDAY <br> SUNNY</p>
+                            <p class="card-text fw-bold fs-6 " id="deg">22 &deg;C <br> 71.6 &deg;F</p>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <div class="col">
+            <div class="card text-bg mb-3 border-0 clear text-light">
+                <div class="card-header text-uppercase">local weather report</div>
+                <div class="card-body">
+                    <h5 class="card-title">Light card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+
+            </div>
+        </div>
+        
+        </div>
+        <div class="card-group ">
+            <div class="card border-0 clear text-light text-center p-4 day"style="cursor: pointer;" >
+              <div class="card-body">
+                <h5 class="card-title text-uppercase">monday</h5>
+                <img src="assets/images/SunCloud.png" class="card-img p-5"  alt="...">
+
+                <p class="card-text fw-bold fs-6">22 &deg;C <br> 71.6 &deg;F</p>
+              </div>
+            </div>
+            <div class="card border-0  clear text-light text-center p-4 day" style="cursor: pointer;">
+              <div class="card-body">
+                <h5 class="card-title text-uppercase text-center">tuesday</h5>
+                <img src="assets/images/Cloud.png" class="card-img p-5"  alt="...">
+
+                <p class="card-text fw-bold fs-6">22 &deg;C <br> 71.6 &deg;F</p>
+              </div>
+            </div>
+            <div class="card border-0  clear text-light text-center p-4 day" style="cursor: pointer;">
+              <div class="card-body">
+                <h5 class="card-title text-uppercase text-center">wednesday</h5>
+                <img src="assets/images/rain.png" class="card-img p-5"  alt="...">
+
+                <p class="card-text fw-bold fs-6">22 &deg;C <br> 71.6 &deg;F</p>
+              </div>
+            </div>
+            <div class="card border-0  clear text-light text-center p-4 day" style="cursor: pointer;">
+                <div class="card-body">
+                  <h5 class="card-title text-uppercase text-center">thursday</h5>
+                  <img src="assets/images/RainThunder.png" class="card-img p-5"  alt="...">
+
+                  <p class="card-text fw-bold fs-6">22 &deg;C <br> 71.6 &deg;F</p>
+                </div>
+              </div>
+              <div class="card border-0  clear text-light text-center p-4 day " style="cursor: pointer;">
+                <div class="card-body ">
+                  <h5 class="card-title text-uppercase text-center" >friday</h5>
+                  <img src="assets/images/Snow.png" class="card-img p-5"  alt="...">
+
+                  <p class="card-text fw-bold fs-6">22 &deg;C <br> 71.6 &deg;F</p>
+                </div>
+              </div>
+          </div>
+    
+    </div>
+
+
+    <script src="assets/bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const cards = document.getElementsByClassName("day");
+const weather = [
+  {
+    day: "Monday<br> SunCloud",
+    image: "assets/images/SunCloud.png",
+    temperature: "22°C <br> 71.6°F",
+  },
+  {
+    day: "Tuesday <br> Cloud",
+    image: "assets/images/Cloud.png",
+    temperature: "22°C <br> 71.6°F",
+  },
+  {
+    day: "Wednesday <br> rain",
+    image: "assets/images/rain.png",
+    temperature: "22°C <br> 71.6°F",
+  },
+  {
+    day: "Thursday <br> RainThunder",
+    image: "assets/images/RainThunder.png",
+    temperature: "22°C <br> 71.6°F",
+  },  {
+    day: "Friday <br> Snow",
+    image: "assets/images/Snow.png",
+    temperature: "22°C <br>71.6°F",
+  }
+];
+
+for (let i = 0; i < cards.length; i++) {
+  cards[i].addEventListener("click", function () {
+    document.getElementById("d-w").innerHTML = weather[i].day;
+    document.getElementById("mg").src = weather[i].image;
+    document.getElementById("deg").innerHTML = weather[i].temperature;
+  });
+}
+
+        
+      </script>
+
+    
+</body>
+</html>
